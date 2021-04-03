@@ -1,0 +1,37 @@
+import React from 'react'
+import {
+  CCreateElement,
+  CSidebar,
+  CSidebarNav,
+  CSidebarNavDivider,
+  CSidebarNavTitle,
+  CSidebarMinimizer,
+  CSidebarNavDropdown,
+  CSidebarNavItem,
+} from '@coreui/react'
+
+
+// sidebar nav config
+import navigation from './_nav'
+
+const TheSidebar = () => {
+  return (
+    <CSidebar>
+      <CSidebarNav>
+        <img src="/logo.png" className="mt-2 mb-3 ml-auto mr-auto" width="40%" alt=""></img>
+        <CCreateElement
+          items={navigation}
+          components={{
+            CSidebarNavDivider,
+            CSidebarNavDropdown,
+            CSidebarNavItem,
+            CSidebarNavTitle
+          }}
+        />
+      </CSidebarNav>
+      <CSidebarMinimizer className="c-d-md-down-none"/>
+    </CSidebar>
+  )
+}
+
+export default React.memo(TheSidebar)
